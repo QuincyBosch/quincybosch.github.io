@@ -181,11 +181,12 @@ window.PROFILE = {
   certifications: [],
 
   // Shown in the order listed. Cover art lives in assets/games/.
+  // Add `stats: "https://..."` to a game to make its card open that page.
   gaming: {
     blurb: "When I'm not writing code, I'm streaming on Twitch. Here's what I play. Come say hi in chat.",
     twitch: "https://www.twitch.tv/quincb",
     games: [
-      { name: "Battlefield 6", image: "assets/games/battlefield-6.jpg" },
+      { name: "Battlefield 6", image: "assets/games/battlefield-6.jpg", stats: "https://tracker.gg/bf6/profile/2783140981/overview" },
       { name: "Titan Quest II", image: "assets/games/titan-quest-2.jpg" },
       { name: "Titan Quest Anniversary Edition", image: "assets/games/titan-quest-ae.jpg" },
       { name: "Borderlands 4", image: "assets/games/borderlands-4.jpg" },

@@ -171,13 +171,20 @@
     const twitch = G.twitch
       ? `<a class="btn btn--twitch" href="${esc(G.twitch)}"${extLink(G.twitch)}>${icon("twitch")}Watch me on Twitch</a>`
       : "";
-    const games = G.games.map((g, i) => `
-      <li class="game reveal" style="--i:${i}">
+    const games = G.games.map((g, i) => {
+      const card = `
         <div class="game-cover">
           ${g.image ? `<img src="${esc(g.image)}" alt="${esc(g.name)} cover art" loading="lazy" width="300" height="450">` : ""}
+          ${g.stats ? `<span class="game-badge">View stats</span>` : ""}
         </div>
-        <p class="game-name">${esc(g.name)}</p>
-      </li>`).join("");
+        <p class="game-name">${esc(g.name)}</p>`;
+      return `
+      <li class="game reveal" style="--i:${i}">
+        ${g.stats
+          ? `<a class="game-link" href="${esc(g.stats)}"${extLink(g.stats)} aria-label="${esc(g.name)}: view my stats (opens in a new tab)">${card}</a>`
+          : card}
+      </li>`;
+    }).join("");
     $("#gaming-body").innerHTML = `
       <div class="gaming-intro reveal">
         ${G.blurb ? `<p>${esc(G.blurb)}</p>` : ""}
