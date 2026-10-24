@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Over — 404</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .hero-content { height: var(--horizon); }
+    .hero-typed::before { content: ""; }
+  </style>
+</head>
+<body>
+  <div class="crt" aria-hidden="true"></div>
+  <section class="hero">
+    <div class="sun-wrap" aria-hidden="true"><div class="sun"></div></div>
+    <div class="floor" aria-hidden="true"><div class="grid"></div></div>
+    <div class="hero-content">
+      <p class="hero-kicker">Error 404</p>
+      <h1 class="hero-name">Game Over</h1>
+      <p class="hero-typed">This level doesn't exist. Continue? <span id="count">9</span></p>
+    </div>
+    <div class="hero-bottom">
+      <a class="btn btn--cyan" href="/">Continue</a>
+    </div>
+  </section>
+  <script>
+    (() => {
+      const el = document.getElementById("count");
+      let n = 9;
+      const t = setInterval(() => {
+        n -= 1;
+        el.textContent = n;
+        if (n <= 0) { clearInterval(t); location.href = "/"; }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>

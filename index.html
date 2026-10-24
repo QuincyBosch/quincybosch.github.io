@@ -1,12 +1,143 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quinton Bosch Portfolio Website</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quinton Bosch — Software Engineering Lead</title>
+  <meta name="description" content="Quinton Bosch — Software Engineering Lead in Port Elizabeth, South Africa. Full-stack C#, .NET, JavaScript and SQL developer since 2008.">
+  <meta name="theme-color" content="#0b0118">
+
+  <!-- Link previews (LinkedIn, Slack, X...) read these tags directly, so keep them in sync with js/profile.js -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Quinton Bosch — Software Engineering Lead">
+  <meta property="og:description" content="Quinton Bosch — Software Engineering Lead in Port Elizabeth, South Africa. Full-stack C#, .NET, JavaScript and SQL developer since 2008.">
+  <!-- Optional: add a 1200x630 PNG and uncomment (use the full https:// URL of your live site) -->
+  <!-- <meta property="og:image" content="https://your-username.github.io/assets/og-image.png"> -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+  <div class="crt" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="logo" href="#top" aria-label="Back to top"><span id="logo-initials">QB</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav aria-label="Main">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#gaming">Gaming</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="crt-toggle" id="crt-toggle" aria-pressed="true" title="Toggle CRT scanlines">CRT</button>
+  </header>
+
+  <section class="hero" id="top">
+    <canvas class="stars" id="stars" aria-hidden="true"></canvas>
+    <div class="sun-wrap" aria-hidden="true"><div class="sun"></div></div>
+
+    <svg class="mountains" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+      <polygon class="m-back" points="0,120 0,70 60,40 120,75 190,20 260,68 330,35 400,80 470,30 540,72 610,18 690,66 760,38 830,78 900,28 960,60 1000,45 1000,120"/>
+      <polyline class="ridge ridge-back" points="0,70 60,40 120,75 190,20 260,68 330,35 400,80 470,30 540,72 610,18 690,66 760,38 830,78 900,28 960,60 1000,45"/>
+      <polygon class="m-front" points="0,120 0,95 80,70 150,98 240,62 320,100 420,76 500,104 600,70 700,100 780,74 870,102 940,80 1000,96 1000,120"/>
+      <polyline class="ridge ridge-front" points="0,95 80,70 150,98 240,62 320,100 420,76 500,104 600,70 700,100 780,74 870,102 940,80 1000,96"/>
+    </svg>
+
+    <div class="floor" aria-hidden="true"><div class="grid"></div></div>
+
+    <div class="hero-content">
+      <h1 class="hero-name" id="hero-name">Quinton Bosch</h1>
+      <p class="hero-script" id="hero-script" aria-hidden="true">Engineer</p>
+      <p class="hero-typed">
+        <span class="sr-only" id="hero-typed-sr"></span>
+        <span id="hero-typed" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span>
+      </p>
+    </div>
+
+    <div class="hero-bottom">
+      <p class="hero-location" id="hero-location"></p>
+      <div class="hero-cta">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn btn--cyan" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+
+    <a class="press-start" href="#about">▼ Press Start ▼</a>
+  </section>
+
+  <main>
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="num">01</span>About</h2>
+        <div class="about reveal" id="about-body"></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="num">02</span>Skills</h2>
+        <div class="skills" id="skills-body"></div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="num">03</span>Experience</h2>
+        <ol class="timeline" id="experience-body"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="num">04</span>Projects</h2>
+        <div class="projects" id="projects-body"></div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="num">05</span>Education</h2>
+        <div class="education" id="education-body"></div>
+      </div>
+    </section>
+
+    <section class="section" id="gaming">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="num">06</span>Gaming</h2>
+        <div class="gaming" id="gaming-body"></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="num">07</span>Contact</h2>
+        <div class="contact-body reveal" id="contact-body"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span id="footer-name">Quinton Bosch</span> · Built with neon &amp; nostalgia</p>
+    <p class="footer-hint">↑ ↑ ↓ ↓ ← → ← → B A</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript><p class="noscript">This site needs JavaScript turned on to load its content.</p></noscript>
+
+  <script src="js/profile.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
